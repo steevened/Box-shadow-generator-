@@ -1,33 +1,44 @@
+//box shadow variables
+const inputIsInset = document.querySelector("#inset");
 const inputRangeHorizontal = document.querySelector("#horizontal");
 const inputRangeVertical = document.querySelector("#vertical");
+const inputRangeBlur = document.querySelector("#blur");
+const inputRangeSpread = document.querySelector("#spread");
+const inputColorShadow = document.querySelector("#color");
+const inputColorOpacity = document.querySelector("#color-opacity");
 
+//select all box shadow sliders
+const inputsShadow = document.querySelectorAll(".input-range");
+
+//box dimension variables
 const inputWidth = document.querySelector("#width-range");
 const inputHeight = document.querySelector("#height-range");
 const inputBorderRadius = document.querySelector("#border-radius");
 const backgroundColor = document.querySelector("#background-color");
 const borderColor = document.querySelector("#border-color");
 
-const inputRangeBlur = document.querySelector("#blur");
-const inputRangeSpread = document.querySelector("#spread");
+//variable of the element to modify
 const square = document.querySelector(".square");
 
-let horizontal = 0;
+//make shadow
 
-inputRangeHorizontal.addEventListener("input", (e) => {
-  const value = e.target.value;
+inputsShadow.forEach((input) => {
+  input.addEventListener("input", makeShadow);
 });
 
-inputRangeVertical.addEventListener("input", (e) => {
-  const value = e.target.value;
-});
+function makeShadow() {
+  // let insetShadow = inputIsInset.checked;
 
-inputRangeBlur.addEventListener("input", (e) => {
-  const value = e.target.value;
-});
+  let shadowInX = inputRangeHorizontal.value;
+  let shadowInY = inputRangeVertical.value;
+  let blurRadius = inputRangeBlur.value;
+  let spread = inputRangeSpread.value;
+  let shadowColor = inputColorShadow.value;
 
-inputRangeSpread.addEventListener("input", (e) => {
-  const value = e.target.value;
-});
+  square.style.boxShadow = `${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
+}
+
+//box properties
 
 inputWidth.addEventListener("input", (e) => {
   const value = e.target.value;
