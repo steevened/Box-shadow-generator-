@@ -36,7 +36,7 @@ inputsShadow.forEach((input) => {
 });
 
 function makeShadow() {
-  // let insetShadow = inputIsInset.checked;
+  let insetShadow = inputIsInset.checked;
 
   let shadowInX = inputRangeHorizontal.value;
   let shadowInY = inputRangeVertical.value;
@@ -44,9 +44,17 @@ function makeShadow() {
   let spread = inputRangeSpread.value;
   let shadowColor = inputColorShadow.value;
 
-  square.style.boxShadow = `${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
+  //we create a variable to verify if the inset checkbox is selected
+  let boxShadowOutput = insetShadow
+    ? `inset ${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`
+    : `${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
 
-  display.innerHTML = `box-shadow: ${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
+  //we assign the styles of the square with the generated code
+
+  square.style.boxShadow = `${boxShadowOutput}`;
+
+  //then, the code is showing to the display
+  display.innerHTML = `box-shadow: ${boxShadowOutput}`;
 }
 
 //box properties
@@ -87,3 +95,6 @@ openModalBtn.addEventListener("click", openModal);
 
 closeModalBnt.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
+//to reload the page
+window.onload = makeShadow();
