@@ -19,6 +19,16 @@ const backgroundColor = document.querySelector("#background-color");
 //variable of the element to modify
 const square = document.querySelector(".square");
 
+// to handle the modal
+
+const modal = document.querySelector(".modal");
+const openModalBtn = document.querySelector("#show-code");
+const closeModalBnt = document.querySelector(".closemodal");
+const overlay = document.querySelector(".overlay");
+
+//to select the display to show the code
+const display = document.querySelector(".display");
+
 //make shadow
 
 inputsShadow.forEach((input) => {
@@ -36,7 +46,7 @@ function makeShadow() {
 
   square.style.boxShadow = `${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
 
-  return `box-shadow: ${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
+  display.innerHTML = `box-shadow: ${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
 }
 
 //box properties
@@ -60,3 +70,20 @@ backgroundColor.addEventListener("input", (e) => {
   const value = e.target.value;
   square.style.backgroundColor = value;
 });
+
+//to open and close the modal
+
+const openModal = () => {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+openModalBtn.addEventListener("click", openModal);
+
+closeModalBnt.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
