@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /*1 rem 10px*/
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #333;
+  color: #eee;
+  line-height: 2;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #333333;
+  border-bottom: 1px solid #111;
+  height: 6rem;
+}
+.navbar .code-container {
+  display: flex;
+  gap: 20%;
+}
+.navbar .code-container a {
+  height: 100%;
+}
+
+.navbar .code-container .fa-brands {
+  font-size: 3rem;
+  color: #aaa;
+}
+
+.btn {
+  color: #fff;
+  width: 9rem;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 50px -20px rgba(0, 0, 0, 0.3);
+  font-size: 1.4rem;
+  padding: 7px 0;
+}
+
+.navbar .nav-button {
+  background-color: #f7f;
+  width: 13rem;
+}
+
+.container {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  height: calc(100vh - 12rem);
+}
+
+aside {
+  background-color: #313131;
+  width: 50%;
+  padding: 1.5rem;
+}
+
+/* box shadows */
+
+.customize {
+  /* position: fixed;
+  width: 45rem;
+  top: 6rem;
+  left: 0;
+  height: 100%; */
+  overflow: auto;
+}
+
+.customize .header-customize {
+  display: flex;
+  justify-content: space-between;
+}
+
+.customize .header-customize button {
+  background-color: #19f;
+}
+
+.container .customize .set-features button {
+  background-color: #a35;
+}
+
+.set-features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.property-description {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.property-description .input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.property-description input[type="text"] {
+  width: 4rem;
+  height: 3rem;
+}
+
+.property-range input {
+  width: 100%;
+}
+
+.properties .color {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.properties .color .property-range input {
+  width: 4rem;
+  height: 3rem;
+  border: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222222;
+  width: 100%;
+}
+
+.square {
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+}
+
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* box dimensions */
+
+.box-dimensions {
+  background-color: #313131;
+  width: 50%;
+}
+
+.box-dimensions .background-color,
+.box-dimensions .border-color {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  align-items: center;
+}
+
+.box-dimensions .header-dimensions {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #111;
+}

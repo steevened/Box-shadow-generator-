@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/79d3936d1b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Box Shadow</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>box shadow</h1>
+      </div>
+      <div class="code-container">
+        <a href="#">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <button class="btn nav-button">Show Code</button>
+      </div>
+    </nav>
+    <div class="container">
+      <aside class="customize">
+        <header class="header-customize">
+          <h2>Customize Shadows</h2>
+          <button class="btn btn-add-Shadow">Add shadow</button>
+        </header>
+        <section class="set-features">
+          <div class="checkboxes">
+            <label for="active"
+              ><input type="checkbox" name="active" id="active" />Active</label
+            >
+
+            <label for="inset"
+              ><input type="checkbox" name="inset" id="inset" />Inset</label
+            >
+          </div>
+          <button class="btn btn-remove-shadow">Remove</button>
+        </section>
+        <section class="properties">
+          <div class="horizontal">
+            <div class="property-description">
+              <label for="horizontal">Horizontal offset</label>
+              <div class="input">
+                <input type="text" value="0" />
+                <p>px</p>
+              </div>
+            </div>
+            <div class="property-range">
+              <input
+                type="range"
+                name="horizontal"
+                id="horizontal"
+                value="0"
+                min="0"
+                max="100"
+              />
+            </div>
+          </div>
+          <div class="vertical">
+            <div class="property-description">
+              <label for="vertical">Vertical offset</label>
+              <div class="input">
+                <input type="text" value="0" />
+                <p>px</p>
+              </div>
+            </div>
+            <div class="property-range">
+              <input
+                type="range"
+                name="vertical"
+                id="vertical"
+                value="0"
+                min="0"
+                max="100"
+              />
+            </div>
+          </div>
+          <div class="blur">
+            <div class="property-description">
+              <label for="blur">Blur radius</label>
+              <div class="input">
+                <input type="text" value="0" />
+                <p>px</p>
+              </div>
+            </div>
+            <div class="property-range">
+              <input
+                type="range"
+                name="blur"
+                id="blur"
+                value="0"
+                min="0"
+                max="100"
+              />
+            </div>
+          </div>
+          <div class="spread">
+            <div class="property-description">
+              <label for="spread">Spread radius</label>
+              <div class="input">
+                <input type="text" value="0" />
+                <p>px</p>
+              </div>
+            </div>
+            <div class="property-range">
+              <input
+                type="range"
+                name="spread"
+                id="spread"
+                value="0"
+                min="0"
+                max="100"
+              />
+            </div>
+          </div>
+          <div class="color">
+            <div class="property-description">
+              <label for="color">Color</label>
+            </div>
+            <div class="property-range">
+              <input type="color" name="color" id="color" />
+            </div>
+          </div>
+          <div class="color-opacity">
+            <div class="property-description">
+              <label for="color-opacity">Color opacity</label>
+            </div>
+            <div class="property-range">
+              <input
+                type="range"
+                name="color-opacity"
+                id="color-opacity"
+                value="1"
+                min="0"
+                max="1"
+                step="0.1"
+              />
+            </div>
+          </div>
+        </section>
+      </aside>
+      <main class="output">
+        <div class="square-container">
+          <div class="square border"></div>
+        </div>
+      </main>
+      <aside class="box-dimensions">
+        <header class="header-dimensions">
+          <h2>Box Properties</h2>
+        </header>
+        <section class="properties">
+          <div class="background-color">
+            <label for="background-color">Background color</label>
+            <div class="input_background-color">
+              <input
+                type="color"
+                name="background-color"
+                id="background-color"
+              />
+            </div>
+          </div>
+          <div class="border-color">
+            <label for="border-color">Border color</label>
+            <div class="input_border-color">
+              <input type="color" name="border-color" id="border-color" />
+            </div>
+          </div>
+          <div class="width">
+            <div class="property-description">
+              <label for="width-input">Width</label>
+              <div class="input">
+                <input
+                  type="text"
+                  name="width-input"
+                  id="width-input"
+                  value="0"
+                />
+                <p>px</p>
+              </div>
+            </div>
+            <div class="property-range">
+              <input
+                type="range"
+                name="width-range"
+                id="width-range"
+                min="0"
+                max="500"
+              />
+            </div>
+          </div>
+          <div class="height">
+            <div class="property-description">
+              <label for="height">Height</label>
+              <div class="input">
+                <input
+                  type="text"
+                  value="0"
+                  name="heigth-output"
+                  id="heigth-output"
+                />
+                <p>px</p>
+              </div>
+            </div>
+            <div class="property-range">
+              <input
+                type="range"
+                name="height-range"
+                id="height-range"
+                min="0"
+                max="500"
+              />
+            </div>
+          </div>
+          <div class="border-radius">
+            <div class="property-description">
+              <label for="border-radius">Border radius</label>
+              <div class="input">
+                <input
+                  type="text"
+                  value="0"
+                  name="border_radius-output"
+                  id="border_radius-output"
+                />
+                <p>%</p>
+              </div>
+            </div>
+
+            <div class="property-range">
+              <input
+                type="range"
+                name="border-radius"
+                id="border-radius"
+                min="0"
+                max="100"
+              />
+            </div>
+
+            <div class="input_border-radius"></div>
+          </div>
+        </section>
+      </aside>
+    </div>
+    <footer class="footer">
+      <h3>Made by Steven Alvarado</h3>
+      <a href="#"></a>
+    </footer>
+  </body>
+  <script src="./src/code/app.js"></script>
+</html>
