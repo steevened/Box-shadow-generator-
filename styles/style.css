@@ -68,7 +68,10 @@ p {
 }
 
 .navbar .nav-button {
-  background-color: #f7f;
+  /* background-color: #f7f;
+   */
+  background-color: #19f;
+
   width: 13rem;
 }
 
@@ -87,11 +90,6 @@ aside {
 /* box shadows */
 
 .customize {
-  /* position: fixed;
-  width: 45rem;
-  top: 6rem;
-  left: 0;
-  height: 100%; */
   overflow: auto;
 }
 
@@ -108,12 +106,36 @@ aside {
   background-color: #a35;
 }
 
-.set-features {
+.customize .set-features {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 5rem 0;
 }
+
+.customize .set-features .checkbox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+/* .checkbox [type="checkbox"] {
+  appearance: none;
+  border-width: 1px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+[type="checkbox"]:checked {
+  border-color: transparent;
+  border-radius: 5px;
+  background-color: #19f;
+  background-image: url(../src/assets/checked.svg);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
 
 .property-description {
   display: flex;
@@ -162,12 +184,6 @@ main {
   height: 300px;
   background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
-}
-
-.border {
-  border-width: 1px;
-  border-style: solid;
 }
 
 /* box dimensions */
@@ -188,6 +204,69 @@ main {
 .box-dimensions .header-dimensions {
   margin-bottom: 2rem;
 }
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(21px);
+  backdrop-filter: blur(5px);
+  /* display: none; */
+}
+
+.modal-content {
+  width: 500px;
+  height: 300px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  color: #111;
+  border-radius: 5px;
+}
+
+.modal-content .closemodal {
+  position: absolute;
+  top: -8%;
+  right: 5px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.modal-content h2 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 25%;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-content .display {
+  width: 80%;
+  height: 20%;
+  border: 1px solid #aaa;
+  background-color: #eee;
+  color: #888;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 25%;
+  left: 50%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer */
 
 .footer {
   height: 6rem;

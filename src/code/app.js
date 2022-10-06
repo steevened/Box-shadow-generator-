@@ -15,7 +15,6 @@ const inputWidth = document.querySelector("#width-range");
 const inputHeight = document.querySelector("#height-range");
 const inputBorderRadius = document.querySelector("#border-radius");
 const backgroundColor = document.querySelector("#background-color");
-const borderColor = document.querySelector("#border-color");
 
 //variable of the element to modify
 const square = document.querySelector(".square");
@@ -36,6 +35,8 @@ function makeShadow() {
   let shadowColor = inputColorShadow.value;
 
   square.style.boxShadow = `${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
+
+  return `box-shadow: ${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
 }
 
 //box properties
@@ -52,15 +53,10 @@ inputHeight.addEventListener("input", (e) => {
 
 inputBorderRadius.addEventListener("input", (e) => {
   const value = e.target.value;
-  square.style.borderRadius = `${value}%`;
+  square.style.borderRadius = `${value}px`;
 });
 
 backgroundColor.addEventListener("input", (e) => {
   const value = e.target.value;
   square.style.backgroundColor = value;
-});
-
-borderColor.addEventListener("input", (e) => {
-  const value = e.target.value;
-  square.style.borderColor = value;
 });
