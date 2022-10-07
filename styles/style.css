@@ -23,6 +23,7 @@ body {
   font-size: 1.4rem;
   font-weight: 600;
   overflow-x: hidden;
+  transition: 1s ease all;
 }
 
 h2 {
@@ -213,9 +214,9 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-
   z-index: 2;
   transform: translate(-50%, -50%);
+  transition: 1s ease all;
 
   /* display: none; */
 }
@@ -231,6 +232,7 @@ main {
   bottom: 0;
   margin: auto;
   color: #111;
+  transition: 1s ease all;
   border-radius: 5px;
 }
 
@@ -241,6 +243,7 @@ main {
   font-size: 40px;
   cursor: pointer;
   color: #aaa;
+  transition: 1s ease all;
 }
 
 .modal-content h2 {
@@ -276,6 +279,7 @@ main {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
+  transition: 1s ease all;
 
   backdrop-filter: blur(5px);
 }
@@ -293,4 +297,37 @@ main {
   justify-content: center;
   align-items: center;
   border-top: 1px solid #111;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  aside,
+  .box-dimensions {
+    width: 100%;
+  }
+
+  .customize {
+    min-height: 100px;
+  }
+
+  .box-dimensions {
+    overflow: auto;
+    /* min-height: 400px; */
+  }
+  .output {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .output .square-container {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 }
