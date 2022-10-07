@@ -49,6 +49,7 @@ function makeShadow() {
     ? `inset ${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`
     : `${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
 
+  console.log(insetShadow);
   //we assign the styles of the square with the generated code
 
   square.style.boxShadow = `${boxShadowOutput}`;
@@ -90,6 +91,10 @@ const closeModal = () => {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
+
+inputIsInset.addEventListener("change", (e) => {
+  makeShadow();
+});
 
 openModalBtn.addEventListener("click", openModal);
 
