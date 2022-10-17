@@ -1,3 +1,7 @@
+//reset btn
+
+const reset = document.querySelector(".btn-remove-shadow");
+
 //box shadow variables
 const inputIsInset = document.querySelector("#inset");
 const inputRangeHorizontal = document.querySelector("#horizontal");
@@ -49,7 +53,6 @@ function makeShadow() {
     ? `inset ${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`
     : `${shadowInX}px ${shadowInY}px ${blurRadius}px ${spread}px ${shadowColor}`;
 
-  console.log(insetShadow);
   //we assign the styles of the square with the generated code
 
   square.style.boxShadow = `${boxShadowOutput}`;
@@ -101,5 +104,14 @@ openModalBtn.addEventListener("click", openModal);
 closeModalBnt.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 
-//to reload the page
-window.onload = makeShadow();
+//reset
+
+reset.addEventListener("click", () => {
+  inputIsInset.checked = false;
+  inputRangeHorizontal.value = 0;
+  inputRangeVertical.value = 0;
+  inputRangeBlur.value = 0;
+  inputRangeSpread.value = 0;
+  inputColorShadow.value = "#ffffff";
+  makeShadow();
+});
