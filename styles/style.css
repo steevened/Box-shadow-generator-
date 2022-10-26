@@ -1,3 +1,29 @@
+:root {
+  --background: #333333;
+  --background-sec: #313131;
+  --background-main: #222222;
+  --font-color: #eeeeee;
+  --font-sec: #aaaaaa;
+  --border: #111111;
+  --shadow-inset: rgba(0, 0, 0, 0.3);
+  --overlay: rgba(0, 0, 0, 0.5);
+  --btn-blue: #19f;
+  --btn-red: #a35;
+  --modal-color: #888;
+  --white: #eee;
+  --black: #222222;
+}
+
+body.dark {
+  --background: #dddddd;
+  --font-color: #222222;
+  --background-sec: #dfdfdf;
+  --background-main: #eeeeee;
+  --font-sec: #999999;
+  --border: #bbbbbb;
+  --modal-color: #bbb;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,14 +42,14 @@ html {
 }
 
 body {
-  background-color: #333;
-  color: #eee;
+  background-color: var(--background);
+  color: var(--font-color);
   line-height: 2;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
   overflow-x: hidden;
-  transition: 1s ease all;
+  transition: 0.5s ease all;
 }
 
 h2 {
@@ -39,13 +65,18 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  background-color: #333333;
-  border-bottom: 1px solid #111;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
   height: 6rem;
 }
 .navbar .code-container {
   display: flex;
-  gap: 20%;
+  justify-content: space-between;
+  /* border: 2px solid blue; */
+  width: 30%;
+  min-width: 30rem;
+  align-items: center;
+  height: 4rem;
 }
 .navbar .code-container a {
   height: 100%;
@@ -53,24 +84,30 @@ p {
 
 .navbar .code-container .fa-brands {
   font-size: 3rem;
-  color: #aaa;
+  color: var(--font-sec);
+  line-height: 4rem;
 }
 
 .btn {
-  color: #fff;
+  color: var(--white);
   width: 9rem;
   border: none;
   outline: none;
   font-weight: 700;
   border-radius: 4px;
-  box-shadow: inset 0px 0px 50px -20px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 50px -20px var(--shadow-inset);
   font-size: 1.4rem;
-  padding: 7px 0;
+  padding: 10px 0;
+}
+
+.dark-mode {
+  all: unset;
+  font-size: 3rem;
+  cursor: pointer;
 }
 
 .navbar .nav-button {
-  background-color: #19f;
-
+  background-color: var(--btn-blue);
   width: 13rem;
 }
 
@@ -81,7 +118,7 @@ p {
 }
 
 aside {
-  background-color: #313131;
+  background-color: var(--background-sec);
   width: 50%;
   padding: 1.5rem;
   overflow: auto;
@@ -99,11 +136,11 @@ button {
 }
 
 .customize .header-customize button {
-  background-color: #19f;
+  background-color: var(--btn-blue);
 }
 
 .container .customize .set-features button {
-  background-color: #a35;
+  background-color: var(--btn-red);
 }
 
 .customize .set-features {
@@ -150,7 +187,7 @@ button {
   justify-content: center;
 }
 
-.property-description input[type="text"] {
+.property-description input[type='text'] {
   width: 4rem;
   height: 3rem;
 }
@@ -175,21 +212,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #222222;
+  background-color: var(--background-main);
   width: 100%;
 }
 
 .square {
   width: 300px;
   height: 300px;
-  background-color: #fff;
+  background-color: var(--font-color);
   border-radius: 20px;
 }
 
 /* box dimensions */
 
 .box-dimensions {
-  background-color: #313131;
+  background-color: var(--background-sec);
   width: 50%;
 }
 
@@ -221,14 +258,14 @@ main {
 .modal-content {
   width: 500px;
   height: 300px;
-  background-color: #fff;
+  background-color: var(--white);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  color: #111;
+  color: var(--black);
   transition: 1s ease all;
   border-radius: 5px;
 }
@@ -239,7 +276,7 @@ main {
   right: 5px;
   font-size: 40px;
   cursor: pointer;
-  color: #aaa;
+  color: var(--font-sec);
   transition: 1s ease all;
 }
 
@@ -256,9 +293,9 @@ main {
 .modal-content .display {
   width: 80%;
   height: 20%;
-  border: 1px solid #aaa;
-  background-color: #eee;
-  color: #888;
+  border: 1px solid var(--font-sec);
+  background-color: var(--white);
+  color: var(--black);
   position: absolute;
   transform: translate(-50%, -50%);
   bottom: 25%;
@@ -275,7 +312,7 @@ main {
   height: 100vh;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--overlay);
   transition: 1s ease all;
 
   backdrop-filter: blur(5px);
@@ -293,7 +330,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #111;
+  border-top: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {
